@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
@@ -7,7 +8,15 @@ namespace HomeDepotWebApp.Models
 {
     public class Tool
     {
+        [Required]
         public int Id { get; set; }
-        public String Name { get; set; }
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string Description { get; set; }
+        [Required]
+        public double Deposit { get; set; }
+        [Required]
+        public double Price { get; set; }
     }
 }
