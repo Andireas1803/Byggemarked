@@ -1,0 +1,41 @@
+﻿@import "Reset.scss";
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+
+$primary: #4E56D4;
+$bg: #070D18;
+
+body {
+    background: #070D18;
+    font-family: 'Roboto', sans-serif;
+    color: #fff;
+}
+
+header {
+    background: #0C1427;
+    border-bottom: 1px solid #172340;
+
+    .logo {
+        padding: 15px;
+
+        a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 20px;
+        }
+    }
+}
+
+
+footer {
+    background: #0C1427;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    border-top: 1px solid #172340;
+
+    p {
+        padding: 15px;
+    }
+}

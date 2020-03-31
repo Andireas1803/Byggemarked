@@ -1,5 +1,7 @@
-﻿using System;
+﻿using HomeDepotWebApp.Models;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -12,19 +14,12 @@ namespace HomeDepotWebApp.Controllers
         {
             return View();
         }
-
-        public ActionResult About()
+        [HttpPost]
+        public ActionResult Index(string Username, string Password)
         {
-            ViewBag.Message = "Your application description page.";
+            Debug.WriteLine(Username + " - " + Password);
 
-            return View();
-        }
-
-        public ActionResult Contact()
-        {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            return View(new { Id = id });
         }
     }
 }
