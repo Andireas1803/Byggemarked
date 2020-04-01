@@ -19,7 +19,7 @@ namespace HomeDepotWebApp.Controllers
         {
             Debug.WriteLine(Username + " - " + Password);
 
-            return View(new { Id = id });
+            return View(new { Id = 1 });
         }
     }
 }

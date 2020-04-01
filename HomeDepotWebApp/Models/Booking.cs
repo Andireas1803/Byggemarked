@@ -9,6 +9,8 @@ namespace HomeDepotWebApp.Models
     public class Booking
     {
         [Required]
+        public int Id { get; set; }
+        [Required]
         public Customer Customer { get; set; }
         [Required]
         public BookingState State { get; set; }
@@ -17,8 +19,9 @@ namespace HomeDepotWebApp.Models
         [Required]
         public int Days { get; set; }
 
-        public Booking(Customer customer, BookingState state, DateTime pickuptime, int days)
+        public Booking(int id, Customer customer, BookingState state, DateTime pickuptime, int days)
         {
+            this.Id = id;
             this.Customer = customer;
             this.State = state;
             this.PickupTime = pickuptime;

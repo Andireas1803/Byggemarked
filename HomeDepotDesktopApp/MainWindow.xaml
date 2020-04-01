@@ -7,6 +7,83 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        <ListBox ItemsSource="{Binding}" DisplayMemberPath="Name"></ListBox>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+            <ColumnDefinition></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="51*"></RowDefinition>
+            <RowDefinition Height="368*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <TextBox x:Name="CustomerId"></TextBox>
+        <ListBox ItemsSource="{Binding}" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="1" FontSize="20" IsEnabled="False"></ListBox>
+        <Label Content="Bookinger" Grid.Column="1" FontSize="20"></Label>
+        <Label Content="Booking" Grid.Column="2" FontSize="20"></Label>
+        <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Kunde ID" FontSize="30"></Label>
+            <Label Grid.Row="2" Content="Navn" FontSize="20"></Label>
+            <Label Grid.Row="3" Content="Adresse" FontSize="20"></Label>
+            <Label Grid.Row="4" Content="Email" FontSize="20"></Label>
+            <Label Grid.Row="6" Content="Brugernavn" FontSize="20"></Label>
+            <Label Grid.Row="7" Content="Adgangskode" FontSize="20"></Label>
+            <TextBox Grid.Row="0" Grid.Column="2" x:Name="Id"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" x:Name="Name"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" x:Name="Address"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" x:Name="Email"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" x:Name="Username"></TextBox>
+            <TextBox Grid.Row="7" Grid.Column="1" x:Name="Password"></TextBox>
+            <Button Grid.Row="8" Grid.Column="1" Content="Opret" Click="Button_Click"></Button>
+        </Grid>
+
+        <Grid Grid.Row="1" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition></ColumnDefinition>
+                <ColumnDefinition></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+                <RowDefinition></RowDefinition>
+            </Grid.RowDefinitions>
+            <Label Grid.Row="0" Content="Booking ID" FontSize="20"></Label>
+            <Label Grid.Row="2" Content="Navn" FontSize="20"></Label>
+            <Label Grid.Row="3" Content="Beskrivelse" FontSize="20"></Label>
+            <Label Grid.Row="4" Content="Depositum" FontSize="20"></Label>
+            <Label Grid.Row="6" Content="Døgnpris" FontSize="20"></Label>
+            <Label Grid.Row="7" Content="Status" FontSize="20"></Label>
+            <TextBox Grid.Row="0" Grid.Column="1" IsEnabled="False"></TextBox>
+            <TextBox Grid.Row="2" Grid.Column="1" IsEnabled="False"></TextBox>
+            <TextBox Grid.Row="3" Grid.Column="1" IsEnabled="False"></TextBox>
+            <TextBox Grid.Row="4" Grid.Column="1" IsEnabled="False"></TextBox>
+            <TextBox Grid.Row="6" Grid.Column="1" IsEnabled="False"></TextBox>
+            <ComboBox Grid.Row="7" Grid.Column="1" IsEnabled="False">
+                <ComboBoxItem Content="RESERVERET"></ComboBoxItem>
+                <ComboBoxItem Content="UDLEVERET"></ComboBoxItem>
+                <ComboBoxItem Content="TILBAGELEVERET"></ComboBoxItem>
+            </ComboBox>
+
+        </Grid>
     </Grid>
 </Window>

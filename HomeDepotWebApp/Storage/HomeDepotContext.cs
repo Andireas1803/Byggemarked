@@ -5,7 +5,7 @@ namespace HomeDepotWebApp.Storage
 {
     public class HomeDepotContext : DbContext
     {
-        public HomeDepotContext() : base("HomeDepot")
+        public HomeDepotContext() : base("HomeDepotDb")
         {
 
         }
