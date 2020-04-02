@@ -1,4 +1,5 @@
 ﻿using HomeDepotWebApp.Models;
+using HomeDepotWebApp.Storage;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
@@ -10,6 +11,7 @@ namespace HomeDepotWebApp.Controllers
 {
     public class HomeController : Controller
     {
+        private HomeDepotContext _context = new HomeDepotContext();
         public ActionResult Index()
         {
             return View();
@@ -17,9 +19,18 @@ namespace HomeDepotWebApp.Controllers
         [HttpPost]
         public ActionResult Index(string Username, string Password)
         {
-            Debug.WriteLine(Username + " - " + Password);
+            var customers = _context.Customers.Where(c => c is CustomerWithLogin
+            && (c as CustomerWithLogin).Username.Equals(Username)
+            && (c as CustomerWithLogin).Password.Equals(Password)).ToList();
 
-            return View(new { Id = 1 });
+            if (customers.Count() > 0)
+            {
+                return View(customers[0]);
+            }
+            else
+            {
+                return View();
+            }
         }
     }
 }

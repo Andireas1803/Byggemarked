@@ -16,8 +16,7 @@
             <RowDefinition Height="51*"></RowDefinition>
             <RowDefinition Height="368*"></RowDefinition>
         </Grid.RowDefinitions>
-        <TextBox x:Name="CustomerId"></TextBox>
-        <ListBox ItemsSource="{Binding}" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="1" FontSize="20" IsEnabled="False"></ListBox>
+        <ListBox x:Name="Bookings" ItemsSource="{Binding}" DisplayMemberPath="Name" Grid.Column="1" Grid.Row="1" FontSize="20" IsEnabled="False"></ListBox>
         <Label Content="Bookinger" Grid.Column="1" FontSize="20"></Label>
         <Label Content="Booking" Grid.Column="2" FontSize="20"></Label>
         <Grid Grid.Row="0" Grid.Column="0" Grid.RowSpan="2">
@@ -48,7 +47,8 @@
             <TextBox Grid.Row="4" Grid.Column="1" x:Name="Email"></TextBox>
             <TextBox Grid.Row="6" Grid.Column="1" x:Name="Username"></TextBox>
             <TextBox Grid.Row="7" Grid.Column="1" x:Name="Password"></TextBox>
-            <Button Grid.Row="8" Grid.Column="1" Content="Opret" Click="Button_Click"></Button>
+            <Button Grid.Row="8" Grid.Column="1" Content="Opret" Click="Button_Click" Name="BtnCreate"></Button>
+            <Button Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="2" Content="Søg" Click="Button_Search"></Button>
         </Grid>
 
         <Grid Grid.Row="1" Grid.Column="2">

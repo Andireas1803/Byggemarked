@@ -17,6 +17,8 @@ namespace HomeDepotWebApp.Models
         [Required]
         public DateTime PickupTime { get; set; }
         [Required]
+        public Tool Tool { get; set; }
+        [Required]
         public int Days { get; set; }
 
         public Booking(int id, Customer customer, BookingState state, DateTime pickuptime, int days)

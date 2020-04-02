@@ -19,7 +19,7 @@ namespace HomeDepotWebApp.Models
 
         }
 
-        public CustomerWithLogin(int id, string name, string address, string username, string password) : base(id, name, address)
+        public CustomerWithLogin(int id, string name, string address, string email, string username, string password) : base(id, name, address, email)
         {
             this.Username = username;
             this.Password = password;

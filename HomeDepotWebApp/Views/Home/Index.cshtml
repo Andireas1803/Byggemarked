@@ -1,20 +1,39 @@
-﻿@model HomeDepotWebApp.Models.CustomerWithLogin
+﻿@model HomeDepotWebApp.Models.IndexViewModel
 @{
     ViewBag.Title = "Forside";
 }
-
+@if (Model == null)
+{
     <div class="login">
         <h1>Byggemarked A/S</h1>
         <h2>Velkommen! Log venligst ind for at fortsætte</h2>
 
         @using (Html.BeginForm())
         {
-            @Html.DisplayNameFor(model => model.Username)
-            @Html.EditorFor(model => model.Username)
+            @Html.DisplayNameFor(model => model.Customer.Username)
+            @Html.EditorFor(model => model.Customer.Username)
 
-            @Html.DisplayNameFor(model => model.Password)
-            @Html.EditorFor(model => model.Password)
+            @Html.DisplayNameFor(model => model.Customer.Password)
+            @Html.EditorFor(model => model.Customer.Password)
 
             <input type="submit" value="Log Ind" />
         }
     </div>
+}
+else
+{
+<div class="booking">
+    <h1>Byggemarked A/S</h1>
+    <h2></h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.DisplayNameFor(model => model.Booking.)
+        @Html.EditorFor(model => model.Username)
+
+        @Html.DisplayNameFor(model => model.Password)
+        @Html.EditorFor(model => model.Password)
+        <input type="submit" value="Log Ind" />
+    }
+</div>
+}
